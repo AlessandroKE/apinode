@@ -14,12 +14,14 @@ const accounts = require('./accounts.route');
 const swagger = require('./swagger.route');
 
 const router = express.Router();
-
 router.use('/cars', cars);
-router.use('/accounts', accounts);
-router.use('/', swagger);
 
-router.get('/', (req, res) => res.send('Sample Node API Version1'));
+const usersController = require('../controllers/usersController');
+router.route('/login')
+    .post(function(req, res) {
+      usersController.login(req, res)
+    });
+
 router.get('/health', (req, res) => {
   const healthcheck = {
 		uptime: process.uptime(),

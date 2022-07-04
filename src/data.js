@@ -219,5 +219,11 @@ module.exports = {
         'Account_id': 4,
         'Car_id': 8
     }
+  ],
+  Users: [
+    {
+      'username': 'elie.guilbaud@sfr.fr',
+      'password': 'azerty'
+    }
   ]
 }
